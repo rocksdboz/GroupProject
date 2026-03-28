@@ -5,7 +5,8 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
-import model.UserDAO;
+import dao.UserDAO;
+import dao.UserDAOImpl;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
@@ -18,7 +19,7 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        UserDAO dao = new UserDAO();
+        UserDAO dao = new UserDAOImpl();
 
         if (dao.validate(username, password)) {
             request.getSession().setAttribute("username", username);

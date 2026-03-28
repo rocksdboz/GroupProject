@@ -1,4 +1,4 @@
-package model;
+package util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,7 +14,7 @@ public class DBConnection {
             conn = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/group_project_db",
                 "root",   // MySQL username
-                ""        // MySQL password, leave empty if none
+                "chnkrs2004"        // MySQL password, leave empty if none
             );
 
         } catch (Exception e) {
